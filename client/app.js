@@ -13,6 +13,5 @@ const app = new Vue({
   ...App
 })
 
-
 Vue.use(Vuetify)
 export { app, router, store }

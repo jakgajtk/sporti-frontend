@@ -7,9 +7,10 @@ const ProgressPlugin = require('webpack/lib/ProgressPlugin')
 const OfflinePlugin = require('offline-plugin')
 const rm = require('rimraf')
 const base = require('./webpack.base')
-const pkg = require('../package')
+// const pkg = require('../package')
 const _ = require('./utils')
 const config = require('./config')
+require('./../node_modules/vuetify/dist/vuetify.min.css')
 
 if (config.electron) {
   // remove files in dist folder in electron mode
@@ -54,12 +55,12 @@ base.plugins.push(
   new OfflinePlugin({
     relativePaths: false,
     ServiceWorker: {
-      events:true,
-      navigateFallbackURL:'/'
+      events: true,
+      navigateFallbackURL: '/'
     },
     AppCache: {
-      events:true,
-      FALLBACK:{ '/':'/' }
+      events: true,
+      FALLBACK: { '/': '/' }
     }
   })
 )
