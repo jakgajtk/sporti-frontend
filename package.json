@@ -38,7 +38,9 @@
     "ie > 8"
   ],
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-runtime": "^6.18.0",
+    "dotenv": "^4.0.0",
     "promise-polyfill": "^6.0.2",
     "vue": "^2.2.0",
     "vue-mdc": "0.0.10",
