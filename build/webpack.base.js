@@ -5,10 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require('./config')
 const _ = require('./utils')
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
     client: './client/index.js'
+  },
+  node: {
+    fs: 'empty'
   },
   output: {
     path: _.outputPath,
@@ -75,8 +79,9 @@ module.exports = {
         from: _.cwd('./static'),
         // to the root of dist path
         to: './'
-      }
-    ])
+      },
+    ]),
+    new Dotenv()
   ],
   target: _.target
 }

@@ -5,7 +5,7 @@
         <v-card height="185px" flat color="white">
           <v-card-text>
             <div>
-              <v-btn flat>Login</v-btn>
+              <v-btn v-on:click="login" flat>Login</v-btn>
             </div>
           </v-card-text>
         </v-card>
@@ -13,14 +13,18 @@
   </v-container>
 </template>
 
+
 <script>
-export default {
-  computed: {
-    count() {
-      return this.$store.state.count
+  import { mapActions } from 'vuex'
+  export default {
+    computed: {
+    },
+    methods: {
+      ...mapActions([
+        'login'
+      ])
     }
   }
-}
 </script>
 
 <style>
